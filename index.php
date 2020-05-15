@@ -47,6 +47,10 @@ include 'config/general.php';
 			<td nowrap><b>path / file:</b></td>
 			<td colspan="3" nowrap><input type="text" size=80 id="location" value="<?php echo BASEDIR; ?>" title="enter path to PHP file(s)" placeholder="/var/www/">
 			</td>
+			<td nowrap><b>file regex :</b></td>
+			<td>
+			<input type="text" size=40 id="filereg" value="" title="enter regex to PHP file(s)" placeholder="">
+			</td>
 			<td nowrap><input type="checkbox" id="subdirs" value="1" title="check to scan subdirectories" checked/>subdirs
 			</td>
 		</tr>

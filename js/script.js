@@ -69,13 +69,14 @@ function handleResponse(idprefix) {
 function scan(ignore_warning)
 {
 	var location = encodeURIComponent(document.getElementById("location").value);
+	var filereg = document.getElementById("filereg").value;
 	var subdirs = Number(document.getElementById("subdirs").checked);
 	var	verbosity = document.getElementById("verbosity").value;
 	var vector = document.getElementById("vector").value;
 	var treestyle = document.getElementById("treestyle").value;
 	var stylesheet = document.getElementById("css").value;
 	
-	var params = "loc="+location+"&subdirs="+subdirs+"&verbosity="+verbosity+"&vector="+vector+"&treestyle="+treestyle+"&stylesheet="+stylesheet;
+	var params = "loc="+location+"&filereg="+filereg+"&subdirs="+subdirs+"&verbosity="+verbosity+"&vector="+vector+"&treestyle="+treestyle+"&stylesheet="+stylesheet;
 
 	if(ignore_warning)
 		params+="&ignore_warning=1";

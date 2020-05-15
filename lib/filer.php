@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License along with thi
 **/
 
 	// get all php files from directory, including all subdirectories
-	function read_recursiv($path, $scan_subdirs)
+	function read_recursiv($path, $filereg, $scan_subdirs)
 	{  
 		$result = array(); 
 
@@ -31,7 +31,7 @@ You should have received a copy of the GNU General Public License along with thi
 					$name = $path . '/' . $file; 
 					if (is_dir($name) && $scan_subdirs) 
 					{  
-						$ar = read_recursiv($name, true); 
+						$ar = read_recursiv($name, $filereg, true); 
 						foreach ($ar as $value) 
 						{ 
 							if(in_array(substr($value, strrpos($value, '.')), $GLOBALS['FILETYPES']))

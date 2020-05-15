@@ -43,11 +43,12 @@ You should have received a copy of the GNU General Public License along with thi
 	if(!empty($_POST['loc']))
 	{		
 		$location = realpath($_POST['loc']);
+		$filereg = trim($_POST['filereg']);
 		
 		if(is_dir($location))
 		{
 			$scan_subdirs = isset($_POST['subdirs']) ? $_POST['subdirs'] : false;
-			$files = read_recursiv($location, $scan_subdirs);
+			$files = read_recursiv($location, $filereg, $scan_subdirs);
 			
 			if(count($files) > WARNFILES && !isset($_POST['ignore_warning']))
 				die('warning:'.count($files));
